@@ -1,0 +1,29 @@
+GET http://localhost:8000/students
+
+###
+
+GET http://localhost:8000/students/66bfb68849f0b3858b56f57b
+
+###
+
+POST http://localhost:8000/students
+Content-Type: application/json
+
+{
+    "name": "Charles Tull",
+    "class": "FSO"
+}
+
+###
+
+DELETE  http://localhost:8000/students/66bfb68849f0b3858b56f57b
+
+###
+
+PATCH  http://localhost:8000/students/66bfb68849f0b3858b56f57b
+Content-Type: application/json
+
+{
+    "name": "New Name",
+    "class": "New Class"
+}
