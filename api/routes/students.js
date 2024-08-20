@@ -65,7 +65,7 @@ router.patch("/:id", getStudent, async (req, res) => {
   }
 });
 
-/* DELETE
+// DELETE
 router.delete("/:id", getStudent, async (req, res) => {
   try {
     await res.student.remove();
@@ -73,6 +73,6 @@ router.delete("/:id", getStudent, async (req, res) => {
   } catch (error) {
     res.status(500).json({message: error.message});
   }
-});*/
+});
 
 module.exports = router;
