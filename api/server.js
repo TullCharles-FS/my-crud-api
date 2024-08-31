@@ -10,6 +10,7 @@ app.use(cors());
 const PORT = process.env.PORT || 8000;
 
 const studentRouter = require("./routes/students");
+const authRouter = require("./routes/auth");
 
 const DATABASE_URL = process.env.DATABASE_URL;
 
@@ -19,7 +20,14 @@ db.on("error", (error) => console.error(error));
 db.once("open", () => console.log("Database Connection Established"));
 
 app.use(express.json());
-app.use("/students", studentRouter);
+app.use("/api/v1/students", studentRouter);
+app.use("/api/v1/auth", authRouter);
+
+app.use(express.static(path.join(__dirname, "../my-react-app/build")));
+
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../my-react-app/build", "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
