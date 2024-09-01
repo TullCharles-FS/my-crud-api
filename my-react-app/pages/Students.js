@@ -1,14 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import Home from "../pages/Home";
-import Dashboard from "../pages/Dashboard";
-import Student from "../pages/Students";
-import SignUp from "../pages/SignUp";
-import Login from "../pages/SignUp";
-import "./App.css";
+import React, {Router, Routes, Route} from "react";
 
 function App() {
-  /*const [students, setStudents] = useState(null);
+  const [students, setStudents] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -41,7 +35,7 @@ function App() {
     } finally {
       setLoading(false);
     }
-  };*/
+  };
 
   const [currentUser, setCurrentUser] = useState(false);
 
@@ -60,8 +54,6 @@ function App() {
         </div>
         <div>
           <Routes>
-            <Route path="/login" exact element={<Login />} />
-            <Route path="/signup" exact element={<SignUp />} />
             <Route path="/students/:id" exact element={<Student />} />
             <Route path="/dashboard" exact element={<Dashboard />} />
             <Route path="/" exact element={<Home />} />
@@ -72,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default Students;
